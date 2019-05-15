@@ -1,0 +1,157 @@
+/* miniprogram/pages/detail/detail.wxss */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 800rpx;
+  background: url(//gw.alicdn.com/tfs/TB16DTRt1uSBuNjy1XcXXcYjFXa-750-796.png_760x760.jpg_.webp);
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  margin-top: 100rpx;
+}
+
+.coupon {
+  margin-top: 60rpx;
+}
+
+.coupon_container {
+  background: url(//gw.alicdn.com/tfs/TB1Tw6Ct1OSBuNjy0FdXXbDnVXa-563-211.png_580x580.jpg_.webp) no-repeat;
+  background-size: 564rpx auto;
+  margin: 0 auto;
+  width: 564rpx;
+  height: 212rpx;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.coupon_price {
+  color: #d0021b;
+  font-size: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: block;
+  text-align: center;
+  margin-top: 16rpx;
+  padding-right: 260rpx;
+}
+
+.coupon_price_i {
+  font-size: 50rpx;
+  display: inline-block;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-right: 0;
+}
+
+.coupon_date {
+  margin-top: 12rpx;
+  padding-left: 0;
+  padding-right: 220rpx;
+  text-align: center;
+  display: block;
+  color: #9b9b9b;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.coupon_btn {
+  position: absolute;
+  right: 50rpx;
+  top: 80rpx;
+  color: #fff;
+  font-size: 38rpx;
+}
+
+.detail {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 312rpx;
+  overflow: hidden;
+  padding: 10rpx;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.detail_img {
+  width: 260rpx;
+  height: 260rpx;
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+.detail_view {
+  flex-grow: 1;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail_desc {
+  margin-bottom: 6rpx;
+}
+
+.detail_count {
+  color: #878787;
+  text-align: right;
+  float: right;
+}
+
+.price {
+  font-size: 26rpx;
+  padding: 10rpx 0;
+}
+
+.price text {
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.p1 {
+  font-weight: bold;
+  color: #d0021b;
+}
+
+.p2 {
+  text-decoration: line-through;
+  font-size: 26rpx;
+  color: #878787;
+}
+
+.price_coupon {
+  color: red;
+  font-size: 80rpx;
+}
+
+.price_coupon_img {
+  width: 100rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.share_content {
+  width: 100%;
+  background: #fff;
+  padding-top: 30rpx;
+}
+
+.share_content button{
+  width: 80%;
+  border-radius: 60rpx;
+  background: -webkit-linear-gradient(left, #ff9000, #ff5000) no-repeat;
+  color: #fff;
+  box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+  margin-bottom: 30rpx;
+}

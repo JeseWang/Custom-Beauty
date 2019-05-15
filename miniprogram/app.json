@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/detail/detail",
+    "pages/home/home",
+    "pages/show/show",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "美丽私人定制",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#FF0033",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "爱自己",
+        "iconPath": "img/tab/heart.png",
+        "selectedIconPath": "img/tab/heart2.png"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "text": "秀自己",
+        "iconPath": "img/tab/msg.png",
+        "selectedIconPath": "img/tab/msg2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "img/tab/mine.png",
+        "selectedIconPath": "img/tab/mine2.png"
+      }
+    ],
+    "position": "bottom",
+    "custom": false
+  },
+  "usingComponents": {}
+}

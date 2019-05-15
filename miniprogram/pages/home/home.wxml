@@ -1,0 +1,29 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="container">
+  <view class="header">
+    <swiper>
+      <swiper-item>
+        <image mode="scaleToFill" src="cloud://test-807938.7465-test/banner.jpg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="list">
+    <navigator 
+      wx:for="{{5}}"
+      class="product"
+      url="/pages/detail/detail?id=1"
+      >
+      <view class="title">半永久纹眉</view>
+      <view class="desc">韩式半永久纹眉，一次定型。。。。</view>
+      <view class="price">
+        <text class="p1">￥399</text>
+        <text class="p2">￥999</text>
+        <text class="p3">3.5折</text>
+      </view>
+      <view class="img">
+        <image wx:for="{{3}}" mode="aspectFill" src='cloud://test-807938.7465-test-807938/logo.jpg'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

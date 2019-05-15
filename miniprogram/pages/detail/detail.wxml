@@ -1,0 +1,40 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">半永久纹眉</view>
+    <view class="coupon">
+      <view class="coupon_container">
+        <view class="coupon_price">
+          <text class="coupon_price_i">￥</text>50</view>
+        <view class="coupon_date">
+          <view>使用期限</view>
+          <view>2019.05.15-2019.06.01</view>
+        </view>
+        <view class="coupon_btn">立即领券</view>
+      </view>
+    </view>
+    <view class="detail">
+      <image class="detail_img" src="cloud://test-807938.7465-test-807938/logo.jpg"></image>
+      <view class="detail_view">
+        <view class="detail_desc">这是描述详情的地方，半永久纹眉，活动期间折上还可加券</view>
+        
+        <view class="price">
+          <text class="p1">￥399</text>
+          <text class="p2">￥999</text>
+          <text class="detail_count">26人购买</text>
+        </view>
+        <view class="price_coupon">
+          <image class="price_coupon_img" src="/img/coupon2.png" mode="aspectFit"></image>
+          <text class="coupon_price_i">￥</text>349
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="share_content">
+    <button class="btn_share">邀请好友助力</button>
+    <button class="btn_help">帮他/她助力</button>
+  </view>
+  <view class="share_list">
+
+  </view>
+</view>
