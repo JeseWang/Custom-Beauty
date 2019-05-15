@@ -155,3 +155,32 @@
   box-shadow: 0 0.08rem 0.16rem #f7c7b1;
   margin-bottom: 30rpx;
 }
+
+.help{
+  width: 100%;
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 60rpx 20rpx;
+  box-sizing: border-box;
+}
+.help_list{
+  position: relative;
+  border: 1px solid red;
+  padding: 60rpx 20rpx;
+}
+.help_title{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: -webkit-linear-gradient(right, #ff9000, #ff5000) no-repeat;
+  border-radius: 40rpx;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: -40rpx;
+  left: 50%;
+  margin-left: -200rpx;
+}
+.add_price{
+  float: right;
+}
