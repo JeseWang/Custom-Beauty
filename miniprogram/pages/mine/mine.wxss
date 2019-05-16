@@ -1,1 +1,62 @@
 /* miniprogram/pages/mine/mine.wxss */
+.iconfont{
+  font-size: 23px;
+  vertical-align: top;
+  margin-right: 10rpx;
+  color: #ff9000;
+}
+.icon-enter{
+  float: right;
+}
+.mine-item{
+  padding: 10px 20px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.mine-item text{
+  margin-left: 3px;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  background: url(//gw.alicdn.com/tfs/TB16DTRt1uSBuNjy1XcXXcYjFXa-750-796.png_760x760.jpg_.webp);
+  padding: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.userinfo-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 40rpx 0 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-btn{
+  background: url(//gw.alicdn.com/tfs/TB16DTRt1uSBuNjy1XcXXcYjFXa-750-796.png_760x760.jpg_.webp);
+  color: #fff;
+  margin: 40rpx;
+}
+
+.unread-icon{
+  display: inline-block;
+  color: #fff;
+  background: red;
+  font-weight: bold;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 20px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+}
+
+.my-coupons{
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+}

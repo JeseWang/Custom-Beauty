@@ -1,2 +1,27 @@
 <!--miniprogram/pages/mine/mine.wxml-->
-<text>miniprogram/pages/mine/mine.wxml</text>
+<view class="container">
+  <view class="userinfo" wx:if="{{hasUserInfo}}">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <button class="userinfo-btn" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 展示我的信息 </button>
+
+  <view>
+    <view class="mine-item" bindtap='showMyCoupons'>
+      <i class="iconfont icon-coupons"></i>
+      <text>我的优惠券</text>
+      <i class="unread-icon my-coupons" wx:if="{{couponRedDot}}"></i>
+      <i class="iconfont icon-enter"></i>
+    </view>
+    <view class="mine-item" bindtap='showOrderList'>
+      <i class="iconfont icon-setup"></i>
+      <text>店铺管理</text>
+      <i class="iconfont icon-enter"></i>
+    </view>
+    <view class="mine-item" bindtap='showAddress'>
+      <i class="iconfont icon-order"></i>
+      <text>用户管理</text>
+      <i class="iconfont icon-enter"></i>
+    </view>
+  </view>
+</view>

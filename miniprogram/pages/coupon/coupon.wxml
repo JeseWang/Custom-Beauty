@@ -1,0 +1,15 @@
+<!--miniprogram/pages/coupon/coupon.wxml-->
+<view class="container">
+  <view class="coupons-list">
+    <view class="coupons-item {{item.hasUsed ? 'coupons-item-used' : ''}}" wx:for="{{list}}" bindtap='showDetail'>
+      <image src='{{item.ImgUrl}}' class="coupons-img" mode='scaleToFill'></image>
+      <view class="coupons-info">
+        <view class="coupons-name">{{item.DiscountMoney}}元{{item.ShopInfo.Name}}优惠券</view>
+        <view class="coupons-time">有效期{{item.ValidFromDate}}到{{item.ValidToDate}}</view>
+      </view>
+      <view class="get-coupons" data-idx="{{index}}" data-cid="{{item.CouponInfoId}}" data-sid="{{item.ShopInfo.ShopAccountId}}" bindtap='receiveCoupon'>查看</view>
+    </view>
+    <view class="coupons-none" wx:if="{{!list.length}}">还没有优惠券</view>
+    <view class="list-bottom" bindtap="loadingMore" wx:if="{{showLoading}}">点击加载更多</view>
+  </view>
+</view>

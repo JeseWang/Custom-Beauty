@@ -1,0 +1,66 @@
+/* miniprogram/pages/coupon/coupon.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coupons-list{
+  border-top: 1px solid #ccc;
+  padding: 0 10px;
+  flex-shrink: 1;
+  flex-grow: 2;
+  overflow: scroll;
+  background: #f0f0f0;
+}
+.coupons-item{
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  padding-right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.coupons-img{
+  width: 150rpx;
+  height: 150rpx;
+  flex-shrink: 0;
+}
+.coupons-info{
+  flex-shrink: 1;
+  flex-grow: 2;
+  padding: 5px;
+  border-right: 2px dotted #ccc;
+}
+.get-coupons{
+  flex-shrink: 0;
+  padding: 15px;
+}
+.coupons-name{
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.coupons-time{
+  font-size: 12px;
+}
+.coupons-item-used{
+  background: #ccc;
+}
+.coupons-item-used .coupons-info{
+  border-right-color: #fff;
+}
+.list-bottom{
+  width: 100%;
+  padding: 10rpx 0;
+  text-align: center;
+  background-color: #EFEFF4;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.coupons-none{
+  text-align: center;
+  padding: 20px;
+}

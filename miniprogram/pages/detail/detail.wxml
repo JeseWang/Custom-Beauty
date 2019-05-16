@@ -38,7 +38,7 @@
     <view class="help_list">
       <view class="help_title">好友助力榜</view>
       <view class="help_item" wx:for="{{5}}">
-        {{index}} 王琦
+        {{index+1}} 王琦
         <text class="add_price">+5元</text>
       </view>
     </view>

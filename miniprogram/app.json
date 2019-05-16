@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/setting/setting",
+    "pages/coupon/coupon",
+    "pages/mine/mine",
     "pages/detail/detail",
     "pages/home/home",
-    "pages/show/show",
-    "pages/mine/mine"
+    "pages/show/show"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
