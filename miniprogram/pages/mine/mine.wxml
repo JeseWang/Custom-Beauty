@@ -13,7 +13,7 @@
       <i class="unread-icon my-coupons" wx:if="{{couponRedDot}}"></i>
       <i class="iconfont icon-enter"></i>
     </view>
-    <view class="mine-item" bindtap='showOrderList'>
+    <!-- <view class="mine-item" bindtap='showOrderList'>
       <i class="iconfont icon-setup"></i>
       <text>店铺管理</text>
       <i class="iconfont icon-enter"></i>
@@ -22,6 +22,7 @@
       <i class="iconfont icon-order"></i>
       <text>用户管理</text>
       <i class="iconfont icon-enter"></i>
-    </view>
+    </view> -->
+    <button class="btn_add" bindtap='addProduct'>添加商品</button>
   </view>
 </view>

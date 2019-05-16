@@ -1,14 +1,15 @@
 <!--miniprogram/pages/detail/detail.wxml-->
+<wxs src="../../wxs/tools.wxs" module="tools" />
 <view class="container">
   <view class="header">
-    <view class="title">半永久纹眉</view>
+    <view class="title">{{info.title}}</view>
     <view class="coupon">
       <view class="coupon_container">
         <view class="coupon_price">
-          <text class="coupon_price_i">￥</text>50</view>
+          <text class="coupon_price_i">￥</text>{{info.couponPrice}}</view>
         <view class="coupon_date">
           <view>使用期限</view>
-          <view>2019.05.15-2019.06.01</view>
+          <view>{{info.startDate}}-{{info.endDate}}</view>
         </view>
         <view class="coupon_btn">立即领券</view>
       </view>
@@ -16,16 +17,16 @@
     <view class="detail">
       <image class="detail_img" src="cloud://test-807938.7465-test-807938/logo.jpg"></image>
       <view class="detail_view">
-        <view class="detail_desc">这是描述详情的地方，半永久纹眉，活动期间折上还可加券</view>
+        <view class="detail_desc">{{info.desc}}</view>
 
         <view class="price">
-          <text class="p1">￥399</text>
-          <text class="p2">￥999</text>
-          <text class="detail_count">26人购买</text>
+          <text class="p1">￥{{info.prePrice}}</text>
+          <text class="p2">￥{{info.fullPrice}}</text>
+          <text class="detail_count">{{info.count}}人购买</text>
         </view>
         <view class="price_coupon">
           <image class="price_coupon_img" src="/img/coupon2.png" mode="aspectFit"></image>
-          <text class="coupon_price_i">￥</text>349
+          <text class="coupon_price_i">￥</text>{{info.prePrice - info.couponPrice}}
         </view>
       </view>
     </view>

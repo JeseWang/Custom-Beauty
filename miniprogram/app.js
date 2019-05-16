@@ -51,7 +51,6 @@ App({
       _openid: this.globalData.openid
     }).get().then(res => {
       console.log("用户数量为：" + res.data.length)
-      console.log(res.data)
       fn && fn(res.data)
     }).catch(err => {
       console.log(err)

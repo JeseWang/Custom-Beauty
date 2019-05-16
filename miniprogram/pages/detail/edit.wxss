@@ -1,0 +1,16 @@
+/* miniprogram/pages/detail/edit.wxss */
+@import '../../style/weui.wxss';
+
+.pushOrder{
+    width: 80%;
+    margin-bottom: 20px;
+}
+.order_imgs{
+  position: relative;
+}
+.order_imgs .delete_icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+}

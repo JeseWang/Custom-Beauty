@@ -90,4 +90,10 @@ Page({
       })
     }
   },
+
+  addProduct: function(){
+    wx.navigateTo({
+      url: '/pages/detail/edit',
+    })
+  }
 })

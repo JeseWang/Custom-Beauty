@@ -1,4 +1,5 @@
 <!--miniprogram/pages/home/home.wxml-->
+<wxs src="../../wxs/tools.wxs" module="tools" />
 <view class="container">
   <view class="header">
     <swiper>
@@ -10,19 +11,19 @@
 
   <view class="list">
     <navigator 
-      wx:for="{{5}}"
+      wx:for="{{list}}"
       class="product"
-      url="/pages/detail/detail?id=1"
+      url="/pages/detail/detail?id={{item._id}}"
       >
-      <view class="title">半永久纹眉</view>
-      <view class="desc">韩式半永久纹眉，一次定型。。。。</view>
+      <view class="title">{{item.title}}</view>
+      <view class="desc">{{item.desc}}</view>
       <view class="price">
-        <text class="p1">￥399</text>
-        <text class="p2">￥999</text>
-        <text class="p3">3.5折</text>
+        <text class="p1">￥{{item.prePrice}}</text>
+        <text class="p2">￥{{item.fullPrice}}</text>
+        <text class="p3">{{tools.discount(item.prePrice, item.fullPrice)}}折</text>
       </view>
       <view class="img">
-        <image wx:for="{{3}}" mode="aspectFill" src='cloud://test-807938.7465-test-807938/logo.jpg'></image>
+        <image wx:for="{{item.files}}" mode="aspectFill" src="{{item}}"></image>
       </view>
     </navigator>
   </view>

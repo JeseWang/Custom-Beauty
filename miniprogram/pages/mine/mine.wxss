@@ -60,3 +60,11 @@
   height: 10px;
   line-height: 10px;
 }
+
+.btn_add{
+  width: 80%;
+  background: -webkit-linear-gradient(right, #ff9000, #ff5000) no-repeat;
+  border-radius: 40rpx;
+  color: #fff;
+  margin-top: 80rpx;
+}
