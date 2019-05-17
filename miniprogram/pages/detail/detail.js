@@ -9,17 +9,25 @@ Page({
    */
   data: {
     // isAdmin: app.globalData.userInfo.openid,
-    info: {}
+    info: {},
+    isAdmin: false
   },
 
   loadDetail: function(id) {
-    console.log(id)
     db.collection('product').doc(id).get().then(res => {
       let data = res.data
       this.setData({
         info: res.data,
+        isAdmin: res.data._openid == app.globalData.openid
       })
       console.log(this.data)
+    })
+  },
+
+  editDetail: function(){
+    let id = this.data.id
+    wx.navigateTo({
+      url: '/pages/detail/edit?id=' + id,
     })
   },
 

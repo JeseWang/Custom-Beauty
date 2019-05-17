@@ -11,7 +11,7 @@
       <i class="iconfont icon-coupons"></i>
       <text>我的优惠券</text>
       <i class="unread-icon my-coupons" wx:if="{{couponRedDot}}"></i>
-      <i class="iconfont icon-enter"></i>
+      <i class="iconfont iconenter"></i>
     </view>
     <!-- <view class="mine-item" bindtap='showOrderList'>
       <i class="iconfont icon-setup"></i>

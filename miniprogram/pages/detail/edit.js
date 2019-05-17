@@ -21,11 +21,27 @@ Page({
     params: {}
   },
 
+  loadDetail: function (id) {
+    db.collection('product').doc(id).get().then(res => {
+      let data = res.data
+      this.setData({
+        info: res.data,
+        isAdmin: res.data._openid == app.globalData.openid
+      })
+      console.log(res)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    if(options.id){
+      this.setData({
+        id: options.id
+      })
+      this.loadDetail(options.id)
+    }
   },
 
   /**
@@ -76,8 +92,6 @@ Page({
   onShareAppMessage: function() {
 
   },
-
-  
 
   chooseImage: function(e) {
     var that = this;
@@ -188,7 +202,7 @@ Page({
           wx.showToast({
             title: '添加成功',
             success: function() {
-              wx.swtichTab({
+              wx.reLaunch({
                 url: '/pages/home/home',
               })
             }

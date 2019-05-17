@@ -8,6 +8,13 @@
   background-size: cover;
 }
 
+.setting{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 60rpx;
+}
+
 .title {
   text-align: center;
   font-size: 32rpx;

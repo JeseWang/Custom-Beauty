@@ -61,8 +61,8 @@
             <view class="weui-label">开始时间</view>
           </view>
           <view class="weui-cell__bd">
-            <picker mode="date" value="{{startDate}}" bindchange="bindStartDateChange">
-              <view class="weui-input">{{startDate}}</view>
+            <picker mode="date" value="{{info.startDate}}" bindchange="bindStartDateChange">
+              <view class="weui-input">{{info.startDate}}</view>
             </picker>
           </view>
         </view>
@@ -71,8 +71,8 @@
             <view class="weui-label">结束时间</view>
           </view>
           <view class="weui-cell__bd">
-            <picker mode="date" value="{{endDate}}" bindchange="bindEndDateChange">
-              <view class="weui-input">{{endDate}}</view>
+            <picker mode="date" value="{{info.endDate}}" bindchange="bindEndDateChange">
+              <view class="weui-input">{{info.endDate}}</view>
             </picker>
           </view>
         </view>
@@ -84,14 +84,14 @@
           <view class="weui-cell__bd">
             <view class="weui-uploader__hd">
               <view class="weui-uploader__title">上传图片</view>
-              <view class="weui-uploader__info">{{files.length}}/3</view>
+              <view class="weui-uploader__info">{{info.files.length}}/3</view>
             </view>
             <view class="weui-uploader__bd">
               <view class="weui-uploader__input-box" wx:if="{{files.length < 3}}">
                 <view class="weui-uploader__input" bindtap="chooseImage"></view>
               </view>
               <view class="weui-uploader__files" id="uploaderFiles">
-                <block wx:for="{{files}}" wx:key="*this">
+                <block wx:for="{{info.files}}" wx:key="*this">
                   <view class="weui-uploader__file order_imgs">
                     <image class="weui-uploader__img" bindtap="previewImage" src="{{item}}" id="{{item}}" mode="aspectFill"></image>
                     <icon type="cancel" size="23" class="delete_icon" bindtap="deleteImg" id="{{index}}" />

@@ -2,6 +2,7 @@
 <wxs src="../../wxs/tools.wxs" module="tools" />
 <view class="container">
   <view class="header">
+    <view class="setting iconfont iconshezhi" bindtap="editDetail"></view>
     <view class="title">{{info.title}}</view>
     <view class="coupon">
       <view class="coupon_container">
