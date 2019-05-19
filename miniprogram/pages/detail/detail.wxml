@@ -16,7 +16,7 @@
       </view>
     </view>
     <view class="detail">
-      <image class="detail_img" src="cloud://test-807938.7465-test-807938/logo.jpg"></image>
+      <image class="detail_img" src="{{info.files[0]}}" mode="aspectFill"></image>
       <view class="detail_view">
         <view class="detail_desc">{{info.desc}}</view>
 

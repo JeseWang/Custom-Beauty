@@ -1,2 +1,4 @@
 <!--miniprogram/pages/show/show.wxml-->
-<text>miniprogram/pages/show/show.wxml</text>
+<view class="container">
+正在开发中。。。
+</view>
