@@ -87,7 +87,7 @@
               <view class="weui-uploader__info">{{info.files.length}}/3</view>
             </view>
             <view class="weui-uploader__bd">
-              <view class="weui-uploader__input-box" wx:if="{{files.length < 3}}">
+              <view class="weui-uploader__input-box" wx:if="{{info.files.length < 3}}">
                 <view class="weui-uploader__input" bindtap="chooseImage"></view>
               </view>
               <view class="weui-uploader__files" id="uploaderFiles">

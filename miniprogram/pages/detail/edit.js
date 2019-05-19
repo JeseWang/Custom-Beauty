@@ -8,29 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    count: 0,
-    startDate: '',
-    endDate: '',
-    files: [],
-    title: '',
-    desc: '',
-    fullPrice: 0,
-    prePrice: 0,
-    couponPrice: 0,
-    maxOff: 0,
-    params: {}
+    params: {},
+    info: {}
   },
 
-  loadDetail: function (id) {
-    db.collection('product').doc(id).get().then(res => {
-      let data = res.data
-      this.setData({
-        info: res.data,
-        isAdmin: res.data._openid == app.globalData.openid
-      })
-      console.log(res)
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -93,8 +74,19 @@ Page({
 
   },
 
+  loadDetail: function (id) {
+    db.collection('product').doc(id).get().then(res => {
+      let data = res.data
+      this.setData({
+        info: res.data,
+        isAdmin: res.data._openid == app.globalData.openid
+      })
+      console.log(res)
+    })
+  },
   chooseImage: function(e) {
     var that = this;
+    let info = this.data.info
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
@@ -108,8 +100,9 @@ Page({
           filePath: path,
           success: data => {
             console.log(data)
+            info.files = info.files.concat(data.fileID)
             that.setData({
-              files: that.data.files.concat(data.fileID)
+              info: info
             });
           },
           fail: err => {
@@ -122,106 +115,116 @@ Page({
   previewImage: function(e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: this.data.files // 需要预览的图片http链接列表
+      urls: this.data.info.files // 需要预览的图片http链接列表
     })
   },
 
   deleteImg: function(e) {
     var index = e.currentTarget.id
-    var that = this
-    var files = this.data.files
-    files.splice(index, 1)
+    let info = this.data.info
+    info.files.splice(index, 1)
     this.setData({
-      files: files
+      info: info
     })
   },
 
   //input绑定
   bindTitleChange: function(e){
+    let info = this.data.info
+    info.title = e.detail.value
     this.setData({
-      title: e.detail.value
+      info: info
     })
   },
   bindDescChange: function (e) {
+    let info = this.data.info
+    info.desc = e.detail.value
     this.setData({
-      desc: e.detail.value
+      info: info
     })
   },
   bindFullPriceChange: function (e) {
+    let info = this.data.info
+    info.fullPrice = e.detail.value
     this.setData({
-      fullPrice: e.detail.value
+      info: info
     })
   },
   bindPrePriceChange: function (e) {
+    let info = this.data.info
+    info.prePrice = e.detail.value
     this.setData({
-      prePrice: e.detail.value
+      info: info
     })
   },
   bindCouponPriceChange: function (e) {
+    let info = this.data.info
+    info.couponPrice = e.detail.value
     this.setData({
-      couponPrice: e.detail.value
+      info: info
     })
   },
   bindMaxOffChange: function (e) {
+    let info = this.data.info
+    info.maxOff = e.detail.value
     this.setData({
-      maxOff: e.detail.value
+      info: info
     })
   },
   bindStartDateChange: function (e) {
+    let info = this.data.info
+    info.startDate = e.detail.value
     this.setData({
-      startDate: e.detail.value
+      info: info
     })
   },
   bindEndDateChange: function (e) {
+    let info = this.data.info
+    info.endDate = e.detail.value
     this.setData({
-      endDate: e.detail.value
+      info: info
+    })
+  },
+
+  dbSuccess: function(){
+    wx.showToast({
+      title: '添加成功',
+      success: function () {
+        wx.reLaunch({
+          url: '/pages/home/home',
+        })
+      }
     })
   },
   
   bindButton: function() {
+    let info = this.data.info
     let params = {
-      startDate: this.data.startDate,
-      endDate: this.data.endDate,
-      files: this.data.files,
-      title: this.data.title,
-      desc: this.data.desc,
-      fullPrice: this.data.fullPrice,
-      prePrice: this.data.prePrice,
-      couponPrice: this.data.couponPrice,
-      maxOff: this.data.maxOff,
-      count: this.data.count
+      title: info.title,
+      desc: info.desc,
+      fullPrice: info.fullPrice,
+      prePrice: info.prePrice,
+      couponPrice: info.couponPrice,
+      maxOff: info.maxOff,
+      startDate: info.startDate,
+      endDate: info.endDate,
+      files: info.files
     }
 
-    if (params.title && params.desc && params.fullPrice &&
-      params.prePrice && params.couponPrice && params.maxOff &&
-      params.startDate && params.endDate && params.files.length == 3
-    ) {
-      db.collection('product').add({
-        data: params,
-        success: res => {
-          wx.showToast({
-            title: '添加成功',
-            success: function() {
-              wx.reLaunch({
-                url: '/pages/home/home',
-              })
-            }
-          })
-          console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '添加失败'
-          })
-          console.error('[数据库] [新增记录] 失败：', err)
-        }
-      })
-    }else{
-      wx.showToast({
-        title: '信息不完整',
-        icon: 'none'
-      })
+    if (!params.title || !params.desc || !params.fullPrice ||
+      !params.prePrice || !params.couponPrice || !params.maxOff ||
+      !params.startDate || !params.endDate || params.files.length != 3) {
+        wx.showToast({
+          title: '信息不完整',
+          icon: 'none'
+        })
+        return;
+      }
+      
+    if (this.data.id) {
+      db.collection('product').doc(this.data.id).update({ data: params }).then(this.dbSuccess)
+    } else {
+      db.collection('product').add({ data: params }).then(this.dbSuccess)
     }
   }
 })
