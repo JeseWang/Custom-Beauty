@@ -10,7 +10,11 @@
     <view class="mine-item" bindtap='showMyCoupons'>
       <i class="iconfont icon-coupons"></i>
       <text>我的优惠券</text>
-      <i class="unread-icon my-coupons" wx:if="{{couponRedDot}}"></i>
+      <i class="iconfont iconenter"></i>
+    </view>
+    <view class="mine-item" bindtap='showMyOrder'>
+      <i class="iconfont icon-coupons"></i>
+      <text>我的预约</text>
       <i class="iconfont iconenter"></i>
     </view>
     <!-- <view class="mine-item" bindtap='showOrderList'>

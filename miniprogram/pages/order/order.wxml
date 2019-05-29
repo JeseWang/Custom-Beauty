@@ -1,0 +1,70 @@
+<!--miniprogram/pages/order/order.wxml-->
+<view class="container">
+  <view class="order_top">
+    <view class="order_top_item {{orderClassIdx == item.id ? 'select' : ''}}" wx:for="{{orderClass}}" wx:key='{{item.id}}' data-idx="{{index}}" bindtap='bindchangehOrderClass'>{{item.name}}</view>
+  </view>
+  <swiper bindchange='bindchangeOrderSwiper' current="{{orderClassIdx}}">
+    <swiper-item wx:for="{{orderClass}}" wx:key="id">
+      <scroll-view class="order_list" scroll-y>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="order_id" >
+          <view class="order_status">
+              {{orderStatus[item.order_status]}}
+              <!-- <icon class=' iconfont iconphone' bindtap='handlerDeleteOrder' data-oindex="{{index}}" data-oid= "{{item.order_id}}"></icon> -->
+          </view>
+          <view class="order_info" bindtap='showOrderDetail' data-oindex="{{index}}" data-oid= "{{item.order_id}}">
+            <view class="order_detail">
+              <text class="order_detail_name">预估重量</text>
+              <text class="order_time">{{item.estimate_weight}}</text>
+            </view>
+            <view class="order_detail">
+              <text class="order_detail_name">预约时间</text>
+              <text class="order_time" wx:if="{{item.time_type == 'plane'}}">{{item.time_appointment}}</text>
+              <text class="order_time" wx:else>立即上门</text>
+            </view>
+            <view class="order_detail">
+              <text class="order_detail_name">上门地址</text>
+              <text class="order_time ta_r">{{item.full_address}}</text>
+            </view>
+            <view class="order_detail">
+              <text class="order_detail_name">联系信息</text>
+              <text class="order_time">{{item.contact_name}} {{item.contact_phone}}</text>
+            </view>
+            <view wx:if="{{item.collector_name}}" class="order_detail">
+              <text class="order_detail_name">破烂小哥</text>
+              <text class="order_time">{{item.contact_name}} {item.collector_phone}}</text>
+            </view>
+            <view wx:if="{{item.total_fee !=0 }}" class="order_detail">
+              <text class="order_detail_name">订单金额</text>
+              <text class="order_time">{{item.total_fee}}元</text>
+            </view>
+            <view wx:if="{{item.order_status == 'cancel' }}" class="order_detail">
+              <text class="order_detail_name">取消原因</text>
+              <text class="order_time">{{item.cancel_reason}}</text>
+            </view>
+          </view>
+          <view wx:if="{{item.order_status == 'dispatch' }}" class="order_action">
+            <view class="order_btn order_btn_main" bindtap="bindShowUrget" >催接单</view>
+            <view class="order_btn">
+              <picker range="{{orderCancelReason}}" value="{{index}}" id= "{{item.order_id}}" bindchange="bindCancelOrder">取消订单</picker>
+            </view>
+          </view>
+          <view wx:if="{{item.order_status == 'inservice' }}" class="order_action">
+            <view class="order_btn order_btn_main" data-phone="{{item.collector_phone}}" bindchange="bindContactColl">联系小哥</view>
+            <view class="order_btn">
+              <picker range="{{orderCancelReason}}" value="{{index}}" id= "{{item.order_id}}" bindchange="bindCancelOrder">取消订单</picker>
+            </view>
+          </view>
+          <view wx:if="{{item.order_status == 'done' }}" class="order_action">
+            <view wx:if="{{item.evaluate_score == null }}" bindtap="bindShowComment" class="order_btn order_btn_main">点评加能量</view>
+            <view class="order_btn" bindtab = "bindOrderagain">再次预约</view>
+          </view>
+          <view wx:if="{{item.order_status == 'cancel' }}" class="order_action">
+            <view class="order_btn order_btn_main" bindtab = "bindFeedback">意见反馈</view>
+            <view class="order_btn" bindtab = "bindOrderagain">再次预约</view>
+          </view>
+        </view>
+        <view wx:if="{{orderList.length == 0 }}" class="order_none">您没有进行中的预约</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

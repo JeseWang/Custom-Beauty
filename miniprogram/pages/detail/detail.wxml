@@ -33,10 +33,11 @@
     </view>
   </view>
   <view class="share_content">
-    <button class="btn_share">邀请好友助力</button>
-    <button class="btn_help">帮他/她助力</button>
+    <!-- <button class="btn_share">邀请好友助力</button>
+    <button class="btn_help">帮他/她助力</button> -->
+    <button>立即预约</button>
   </view>
-  <view class="help">
+  <view class="help" wx:if="{{false}}">
     <view class="help_list">
       <view class="help_title">好友助力榜</view>
       <view class="help_item" wx:for="{{5}}">

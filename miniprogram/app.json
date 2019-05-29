@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/order/order",
     "pages/home/home",
     "pages/detail/edit",
     "pages/detail/detail",
@@ -28,8 +29,8 @@
         "selectedIconPath": "img/tab/heart2.png"
       },
       {
-        "pagePath": "pages/show/show",
-        "text": "秀自己",
+        "pagePath": "pages/order/order",
+        "text": "预约",
         "iconPath": "img/tab/msg.png",
         "selectedIconPath": "img/tab/msg2.png"
       },

@@ -4,6 +4,7 @@
 page, .container {
   box-sizing: border-box;
   background: #f0f0f0;
+  height: 100%;
 }
 
 .container {
